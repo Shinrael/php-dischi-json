@@ -18,18 +18,18 @@
 </head>
 <body>
   <div id="app" >
-    <h1 class="text-center ">{{title}}</h1>
+    <h1 class="text-center">{{title}}</h1>
 
-    <div class="container-dischi pt-5 d-flex justify-content-center">
-      <div class="row">
+    <div class="container-dischi pt-5 d-flex justify-content-center align-items-center">
+      <div class="row row-cols-3 justify-content-center">
 
         <div
-          class="col-4 text-center"
+          class="col text-center"
           v-for="(el,index) in list"
           :key="index">
           <div class="card mb-3" style="width: 18rem;">
             <img :src="el.poster" class="card-img-top" :alt="el.title">
-            <div class="card-body">
+            <div class="card-body text-white ">
               <h4 class="card-text">{{ el.title }}</h4>
               <p>{{ el.author }}</p>
               <h5>{{ el.year }}</h5>
