@@ -17,22 +17,73 @@
   <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
 </head>
 <body>
-  <div id="app" >
-    <h1 class="text-center">{{title}}</h1>
+  <div id="app" class="d-flex align-items-center flex-column">
 
+    <!-- INPUT GROUP -->
+
+    <div class="input-group my-3 mb-3 container-input d-flex flex-column ">
+      <h1 class="text-center text-white mb-5">{{title}}</h1>
+      <div class="row d-flex justify-content-center">
+        <div class="col-4">
+          <input
+            v-model.trim="newTask.title"
+            type="text"
+            class="form-control mb-3"
+            placeholder="Nome Album">
+        </div>
+        <div class="col-4">
+          <input
+            v-model.trim="newTask.author"
+            type="text"
+            class="form-control mb-3"
+            placeholder="Autore">
+        </div>
+        <div class="col-4">
+          <input
+            v-model.trim="newTask.year"
+            type="text"
+            class="form-control mb-3"
+            placeholder="Anno">
+        </div>
+        <div class="col-4">
+          <input
+            v-model.trim="newTask.poster"
+            type="text"
+            class="form-control mb-3"
+            placeholder="Inserisci il link del poster">
+        </div>
+        <div class="col-4">
+          <input
+            v-model.trim="newTask.genre"
+            type="text"
+            class="form-control mb-3"
+            placeholder="Genere">
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center">
+        <div class="col-2 text-center ">
+          <button
+            @click.stop="addNewTask"
+            class="btn btn-outline-danger btn-block"
+            type="button">Invia</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- LISTA DISCHI -->
     <div class="container-dischi pt-5 d-flex justify-content-center align-items-center">
       <div class="row row-cols-3 justify-content-center">
 
         <div
-          class="col text-center"
+          class="col text-center d-flex justify-content-center "
           v-for="(el,index) in list"
           :key="index">
-          <div class="card mb-3" style="width: 18rem;">
+          <div class="card mb-3 flex-wrap" style="width: 18rem;">
             <img :src="el.poster" class="card-img-top" :alt="el.title">
             <div class="card-body text-white ">
               <h4 class="card-text">{{ el.title }}</h4>
               <p>{{ el.author }}</p>
-              <h5>{{ el.year }}</h5>
+              <h5>{{ el.year }}</h5>              
             </div>
           </div>
         </div>

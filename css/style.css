@@ -1,8 +1,15 @@
+#app{
+  background-color: #1d2d3c;
+}
+
+.container-input{
+  width: 80%;
+}
+
 .container-dischi{
-  width: 100%;
+  width: 80%;
   height: 100%;
   background-color: #1d2d3c;
-  padding-left: 10%;
 }
 
 .card{
