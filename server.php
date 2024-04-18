@@ -8,7 +8,7 @@ $json_string = file_get_contents('dischi.json');
 
 $list = json_decode($json_string, true);
 
-// Prima controlliamo con isser se esiste in post la nuova task, e se esiste la aggiungiamo al file json
+// Prima controlliamo con isset se esiste in post la nuova task, e se esiste la aggiungiamo al file json
 
 if(isset($_POST['newTaskTitle'])){
   $new_item = [
@@ -19,6 +19,14 @@ if(isset($_POST['newTaskTitle'])){
     'genre' => $_POST['newTaskGenre'],
   ];
   $list[] = $new_item;
+  file_put_contents('dischi.json', json_encode($list));
+}
+
+// Se arriva in POST indexToDelete elimino la task
+
+if(isset($_POST['indexToDelete'])){
+  $indexToDelete = $_POST['indexToDelete'];
+  array_splice($list, $indexToDelete, 1);
   file_put_contents('dischi.json', json_encode($list));
 }
 

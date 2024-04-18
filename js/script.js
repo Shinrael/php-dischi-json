@@ -24,6 +24,7 @@ createApp({
             this.list = result.data;
           })
     },
+
     addNewTask(){
       
       const data = new FormData();
@@ -36,8 +37,25 @@ createApp({
       axios.post(this.apiUrl, data)
             .then(result =>{
               this.list = result.data;
+              this.newTask.title = '';
+              this.newTask.author = '';
+              this.newTask.year = '';
+              this.newTask.poster = '';
+              this.newTask.genre = '';
             })
-    }
+    },
+
+    removeTask(index){
+      
+      const data = new FormData();
+      data.append('indexToDelete', index);
+
+      axios.post(this.apiUrl, data)
+            .then(result =>{
+              this.list = result.data;
+            })
+
+    },
   },
 
   mounted(){
