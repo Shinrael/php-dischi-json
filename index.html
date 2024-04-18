@@ -81,7 +81,7 @@
           v-for="(el,index) in list"
           :key="index">
           <div class="card mb-3 flex-wrap" style="width: 18rem;">
-            <img :src="el.poster" class="card-img-top" :alt="el.title">
+            <img :src="el.poster" class="card-img-top rounded" :alt="el.title">
             <div class="card-body text-white ">
               <h4 class="card-text">{{ el.title }}</h4>
               <p>{{ el.author }}</p>
