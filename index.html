@@ -21,8 +21,8 @@
 
     <!-- INPUT GROUP -->
 
-    <div class="input-group my-3 mb-3 container-input d-flex flex-column ">
-      <h1 class="text-center text-white mb-5">{{title}}</h1>
+    <div class="input-group mb-5 mt-3 container-input d-flex flex-column ">
+      <h2 class="text-center text-white mb-3">Inserisci il tuo nuovo disco</h2>
       <div class="row d-flex justify-content-center">
         <div class="col-4">
           <input
@@ -64,14 +64,16 @@
         <div class="col-2 text-center ">
           <button
             @click.stop="addNewTask"
-            class="btn btn-outline-danger btn-block"
+            class="btn btn-outline-danger btn-block mb-3"
             type="button">Invia</button>
         </div>
       </div>
     </div>
 
     <!-- LISTA DISCHI -->
+    <h1 class="text-center text-white mb-3">{{title}}</h1>
     <div class="container-dischi pt-5 d-flex justify-content-center align-items-center">
+      
       <div class="row row-cols-3 justify-content-center">
 
         <div

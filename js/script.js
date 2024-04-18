@@ -3,7 +3,7 @@ const { createApp } = Vue;
 createApp({
   data(){
     return{
-      title: 'Lista Dischi',
+      title: 'Discografia Salvata',
       apiUrl: 'server.php',
       list: [],
       newTask:{

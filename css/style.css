@@ -4,7 +4,15 @@
 
 .container-input{
   width: 80%;
+  border: 1px solid red;
+  border-radius: 20px;
+  background-color: #112030;
 }
+
+.container-input input{
+  width: 475px;
+}
+
 
 .container-dischi{
   width: 80%;
